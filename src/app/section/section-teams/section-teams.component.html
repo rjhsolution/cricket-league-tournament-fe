@@ -1,0 +1,30 @@
+<section class="blog-list mtb-40" id="teamintro" class="parallax-section">
+  <div class="container">
+    <h1>TEAMS</h1>
+    <div class="row text-center">
+  <div class="accordion col-md-6 mb-3" *ngFor="let team of teamplayerslist;" id="accordionExample">
+    <h3 class="list-group-item list-group-item-action active mt-4 pl-4 text-left">{{team[0]}}</h3>
+    <div class="card mt-n2" *ngFor="let player of team[1]; index as i">
+      <div class="card-header" [id]="player[i].player_name">
+        <h2 class="mb-0 text-left">
+          <button class="btn btn-link text-capitalize" type="button" data-toggle="collapse" [attr.data-target] = "'#' + player[i].player_name.split(' ').join('')" aria-expanded="true" aria-controls="collapseOne">{{player[i].player_name}}</button>
+        </h2>
+      </div>
+
+      <div [id]="player[i].player_name.split(' ').join('')" class="collapse" aria-labelledby="headingOne" data-parent = "#accordionExample">
+          <div class="card border-light flex-md-row mb-4 box-shadow h-md-250">
+            <img class="card-img-right flex-auto ml-3 mt-3 d-none d-md-block rounded" src="https://iplstatic.s3.amazonaws.com/players/210/Photo-Missing.png" alt="Thumbnail [200x250]" style="width: 200px;height: 250px;background: linear-gradient(134deg,#01428c42,#01428c94);">
+            <div class="card-body d-flex flex-column align-items-start">
+              <p class="card-text"><strong>Batting hand:</strong> <em> {{player[i].batting_hand}}</em></p>
+              <p class="card-text"><strong>Bowling Skill:</strong> <em> {{player[i].bowling_skill}}</em></p>
+              <p class="card-text"><strong>Date of birth:</strong> <em> {{player[i].dob}}</em></p>
+              <p class="card-text"><strong>Additional information:</strong> <em> {{player[i].add_info}}</em></p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  </div>
+</div>
+</section>

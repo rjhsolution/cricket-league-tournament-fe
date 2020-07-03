@@ -1,0 +1,39 @@
+
+<section class="blog-list mtb-40" id="statslist" class="parallax-section">
+    <div class="container">
+      <h1>POINTS TABLE</h1>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="blog-box mt-4 mb-3">
+                <table class="table table-bordered table-responsive">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Country Name</th>
+                      <th scope="col">Matches</th>
+                      <th scope="col">Won</th>
+                      <th scope="col">Lost</th>
+                      <th scope="col">Tied</th>
+                      <th scope="col">Pts</th>
+                      <th scope="col">Qualified</th>
+                    </tr>
+                  </thead>
+                  <tbody> 
+                    <tr class="bg-info" *ngFor="let result of resultslist">
+                      <th scope="row">{{result.results_id}}</th>
+                      <td>{{result.country_name}}</td>
+                      <td>{{result.total_matches}}</td>
+                      <td>{{result.won}}</td>
+                      <td>{{result.lost}}</td>
+                      <td>{{result.tied}}</td>
+                      <td>{{result.points}}</td>
+                      <td class="alertsuccess"><strong>{{result.qualifynext}}</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

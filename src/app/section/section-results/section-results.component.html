@@ -1,0 +1,46 @@
+<section class="blog-list mtb-40" id="resultintro" class="parallax-section">
+  <div class="container">
+      <h1 class="mb-4">MATCHES RESULTS</h1>
+    <div class="row text-center">
+    <div class="accordion col-md-12 mb-3" *ngFor="let match of allmatcheslist" id="accordionExample">
+      <div class="card mt-n2">
+        <div class="card-header">
+          <h2 class="mb-0 text-left">
+            <button class="btn btn-link text-capitalize col-12" type="button" data-toggle="collapse" [attr.data-target] = "'#a' + match.match_id" aria-expanded="true" aria-controls="collapseOne">
+              <div class="list-group">
+              <div class="blog-box list-group-item list-group-item-action disabled mt-3 mb-3">
+                <div class="row">
+                  <div class="col-4">
+                    <h3 class="align-middle">{{match.match_date}}</h3>
+                  </div>
+                  <div class="col-4">
+                    <h3><strong>{{match.team_1}}</strong></h3>
+                    <h4><em>vs</em></h4>
+                    <h3><strong>{{match.team_2}}</strong></h3>
+                  </div>
+                  <div class="col-4">
+                    <h2 class="align-middle alert-success_theme"><em>{{match.match_winner}} Won</em></h2>
+                  </div>
+              </div>
+              </div>
+            </div>
+          </button>
+          </h2>
+        </div>
+          <div [id]="'a' + match.match_id" class="collapse alert-primary" aria-labelledby="headingOne" data-parent = "#accordionExample">
+              <div class="card border-light flex-md-row mt-4 mb-4 box-shadow h-md-250 border-0">
+                <div class="card-body d-flex flex-column alert-primary">
+                  <h4 class="card-text" *ngIf="match.win_type == 'bat'"><strong>{{match.match_winner}} won by {{match.win_margin}} wickets.</strong> </h4>
+                  <h4 class="card-text" *ngIf="match.win_type == 'field'"><strong>{{match.match_winner}} won by {{match.win_margin}} runs.</strong></h4>
+                  <p class="card-text"><strong>Man of the match:</strong> <em> {{match.man_of_the_match}}</em></p>
+                  <p class="card-text"><strong>Venue:</strong> <em> {{match.venue}}</em></p>
+                  <p class="card-text"><strong>Outcome Type:</strong> <em> {{match.outcome_type}}</em></p>
+                  <p class="card-text"><em> {{match.match_formate}}</em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

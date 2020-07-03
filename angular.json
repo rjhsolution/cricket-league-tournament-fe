@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-projects": {
+    "cricket-league-tournament": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-projects",
+            "outputPath": "dist/cricket-league-tournament",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,9 +28,22 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/styles.less",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/bootstrap/dist/css/animate.css",
+              "node_modules/bootstrap/dist/css/owl.carousel.css",
+              "node_modules/bootstrap/dist/css/owl.theme.css",
+              "node_modules/bootstrap/dist/css/fontawesome.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/jquery-3.4.1.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/bootstrap/dist/js/jquery.parallax.js",
+              "node_modules/bootstrap/dist/js/owl.carousel.min.js",
+              "node_modules/bootstrap/dist/js/smoothscroll.js",
+              "node_modules/bootstrap/dist/js/wow.min.js",
+              "node_modules/bootstrap/dist/js/custom.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -66,18 +79,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-projects:build"
+            "browserTarget": "cricket-league-tournament:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-projects:build:production"
+              "browserTarget": "cricket-league-tournament:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-projects:build"
+            "browserTarget": "cricket-league-tournament:build"
           }
         },
         "test": {
@@ -114,15 +127,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-projects:serve"
+            "devServerTarget": "cricket-league-tournament:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-projects:serve:production"
+              "devServerTarget": "cricket-league-tournament:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "angular-projects"
+  "defaultProject": "cricket-league-tournament"
 }
